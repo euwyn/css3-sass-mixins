@@ -5,7 +5,8 @@
     %meta{ "http-equiv" => 'Content-Type', :content => 'text/html;charset=utf-8' }
     %title CSS3 Sass Mixins
     %meta{ :name => 'keywords', :content => 'css3, sass, scss, mixins, filters' }
-    %meta{ :description => 'Presentation and demos of CSS3 Sass mixins, a minimalistic util which makes it easier to use css3 in our daily web projects.' }
+    %meta{ :name => 'description', :content => 'Presentation and demos of CSS3 Sass mixins, a minimalistic util which makes it easier to use css3 in our daily web projects.' }
+    %script{ :src => 'http://www.modernizr.com/downloads/modernizr-2.0.3.js' }
     %link{ :rel => 'stylesheet', :href => 'styles.css' } 
   %body
     %header
@@ -13,17 +14,15 @@
     %section
       %h2 What is CSS3 Sass mixins?
       
-      %p 
-        :markdown 
-          Similar to [CSS3 Please!](http://css3please.com), this util makes it easier to use css3 in our daily projects by letting "someone else" managing vendor prefixes and (nasty) IE filters. 
+      :markdown 
+        Similar to [CSS3 Please!](http://css3please.com), this util makes it easier to use css3 in our daily projects by letting "someone else" managing vendor prefixes and (nasty) IE filters. 
       %ul
         %li
           %a{ :href => 'https://github.com/madr/css3-sass-mixins/zipball/master' } Download ZIP
         %li
           %a{ :href => 'https://github.com/madr/css3-sass-mixins/tarball/master' } Download tarball
-      %p 
-        :markdown
-          **CSS3 Sass Mixins is for minimalistics only.** A way more feature-rich and qualified way of dealing with CSS3 is to use [Compass](http://compasstyle.org).
+      :markdown
+        **CSS3 Sass Mixins is for minimalistics only.** A way more feature-rich and qualified way of dealing with CSS3 is to use [Compass](http://compasstyle.org).
     %section
       %h2 Demos: What's included?
       %article
@@ -36,7 +35,7 @@
                   .with-border-radius {
                     @include border-radius(10px 10px / 20px 20px);
                   }
-                  
+              
                   .slash-notation {
                     @include border-radius(10px 10px / 20px 20px);
                   }
@@ -46,7 +45,7 @@
                 :preserve
                   .with-border-radius 
                     @include border-radius(10px 10px / 20px 20px)
-                  
+              
                   .slash-notation
                     @include border-radius(10px 10px / 20px 20px)                  
       %article
@@ -122,8 +121,8 @@
                 :preserve
                   .with-transition {
                     @include transition(all 0.3s ease-out);
-                    
-                    &:hover { background-color: #ff0; }
+                
+                    &amp;:hover { background-color: #ff0; }
                   }
           .unit.size1of2.sass
             %pre
@@ -131,46 +130,39 @@
                 :preserve
                   .with-transitionb
                     @include transition(all 0.3s ease-out)
-                    
-                    &:hover 
+                
+                    &amp;:hover 
                       background-color: #ff0
     %section
       %h2 How to implement
       %p
         Clone the git repo into your SASS/SCSS project. Use @import to make it available in your main css file or any files which should be enhanced.
-        %pre
-          %code
-            :preserve
-              @import 'css3-sass-mixins/all'
+        :preserve
+          @import 'css3-sass-mixins/all'
               
     %section
       %h2 IE Filters are optional
-      %p
-        :markdown
-          Where possible, the mixins contains a filter for making IE behave. However, it is not couraged
-          to use Filters due to performance issues. The mixins are therefore configured to skip filters by default. This is done by the `$useIEFilters` variable in the top section of the files.
-      %p
-        :markdown
-          To use or skip using IE-filters without affecting the global configuration, passing an extra argument to your mixin with the value 0 or 1 will override `$useIEFilters`.
+      :markdown
+        Where possible, the mixins contains a filter for making IE behave. However, it is not couraged
+        to use Filters due to performance issues. The mixins are therefore configured to skip filters by default. This is done by the `$useIEFilters` variable in the top section of the files.
+
+        To use or skip using IE-filters without affecting the global configuration, passing an extra argument to your mixin with the value 0 or 1 will override `$useIEFilters`.
           
       %pre
-        %code
-          %pre
-            :preserve
-              @import 'css3-sass-mixins/all';
+        :preserve
+          @import 'css3-sass-mixins/all';
 
-              // I am aware of the risks and want to use IE filters
-              $useIEFilters: 1;
+          // I am aware of the risks and want to use IE filters
+          $useIEFilters: 1;
 
-              // ... except for my background gradient.
-              body {
-                @include linear-gradient(#333, #555, 0); // '0' overrides global.
-              }
+          // ... except for my background gradient.
+          body {
+            @include linear-gradient(#333, #555, 0); // '0' overrides global.
+          }
     %section
       %h2 Contributions are most welcome!
-      %p
-        :markdown
-          This is really not an active project due to its tiny size. It is more like on-demand: when something useful is missing it will be added in some way. I do wish, though, that hosting the code on GitHub will promote forks and additions from anybody. Just fork it and improve, or write a ticket. 
+      :markdown
+        This is really not an active project due to its tiny size. It is more like on-demand: when something useful is missing it will be added in some way. I do wish, though, that hosting the code on GitHub will promote forks and additions from anybody. Just fork it and improve, or write a ticket. 
     %footer
       :markdown
         Brought to you by [madr](https://github.com/madr). Contributors: [VoQn](https://github.com/VoQn).
