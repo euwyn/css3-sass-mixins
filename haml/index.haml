@@ -6,6 +6,7 @@
     %title CSS3 Sass Mixins
     %meta{ :name => 'keywords', :content => 'css3, sass, scss, mixins, filters' }
     %meta{ :description => 'Presentation and demos of CSS3 Sass mixins, a minimalistic util which makes it easier to use css3 in our daily web projects.' }
+    %link{ :rel => 'stylesheet', :href => 'styles.css' } 
   %body
     %header
       %h1 CSS3 Sass Mixins
@@ -15,14 +16,19 @@
       %p 
         :markdown 
           Similar to [CSS3 Please!](http://css3please.com), this util makes it easier to use css3 in our daily projects by letting "someone else" managing vendor prefixes and (nasty) IE filters. 
+      %ul
+        %li
+          %a{ :href => 'https://github.com/madr/css3-sass-mixins/zipball/master' } Download ZIP
+        %li
+          %a{ :href => 'https://github.com/madr/css3-sass-mixins/tarball/master' } Download tarball
       %p 
         :markdown
-          CSS3 Sass Mixins is for minimalistics only. A way more feature-rich and qualified way of dealing with CSS3 is to use [Compass](http://compasstyle.org).
+          **CSS3 Sass Mixins is for minimalistics only.** A way more feature-rich and qualified way of dealing with CSS3 is to use [Compass](http://compasstyle.org).
     %section
       %h2 Demos: What's included?
       %article
         %h3 border-radius
-        .line
+        .line.with-border-radius
           .unit.size1of2
             %pre
               %code
@@ -34,7 +40,7 @@
                   .slash-notation {
                     @include border-radius(10px 10px / 20px 20px);
                   }
-          .unit.size1of2
+          .unit.size1of2.sass
             %pre
               %code
                 :preserve
@@ -45,7 +51,7 @@
                     @include border-radius(10px 10px / 20px 20px)                  
       %article
         %h3 box-shadow
-        .line
+        .line.with-box-shadow
           .unit.size1of2
             %pre
               %code
@@ -53,7 +59,7 @@
                   .with-box-shadow {
                     @include box-shadow(2px, 2px, 4px, #000);
                   }
-          .unit.size1of2
+          .unit.size1of2.sass
             %pre
               %code
                 :preserve
@@ -61,7 +67,7 @@
                     @include box-shadow(2px, 2px, 4px, #000)
       %article
         %h3 linear-gradient
-        .line
+        .line.with-linear-gradient
           .unit.size1of2
             %pre
               %code
@@ -69,7 +75,7 @@
                   .with-linear-gradient {
                     @include linear-gradient(#333, #555);
                   }
-          .unit.size1of2
+          .unit.size1of2.sass
             %pre
               %code
                 :preserve
@@ -77,39 +83,39 @@
                     @include linear-gradient(#333, #555)
       %article
         %h3 rgba
-        .line
+        .line.with-rgba
           .unit.size1of2
             %pre
               %code
                 :preserve
                   .with-rgba {
-                    @include rgba(#000, .6);
+                    @include rgba(#000, .3);
                   }
-          .unit.size1of2
+          .unit.size1of2.sass
             %pre
               %code
                 :preserve
                   .with-rgba 
-                    @include rgba(#000, .6)
+                    @include rgba(#000, .3)
       %article
         %h3 rotate
-        .line
+        .line.with-rotation
           .unit.size1of2
             %pre
               %code
                 :preserve
                   .with-rotation {
-                    @include rotate(-7);
+                    @include rotate(-2);
                   }
-          .unit.size1of2
+          .unit.size1of2.sass
             %pre
               %code
                 :preserve
                   .with-rotation
-                    @include rotate(-7)
+                    @include rotate(-2)
       %article
         %h3 transition
-        .line
+        .line.with-transition
           .unit.size1of2
             %pre
               %code
@@ -119,11 +125,11 @@
                     
                     &:hover { background-color: #ff0; }
                   }
-          .unit.size1of2
+          .unit.size1of2.sass
             %pre
               %code
                 :preserve
-                  .with-rotation
+                  .with-transitionb
                     @include transition(all 0.3s ease-out)
                     
                     &:hover 
@@ -160,6 +166,11 @@
               body {
                 @include linear-gradient(#333, #555, 0); // '0' overrides global.
               }
+    %section
+      %h2 Contributions are most welcome!
+      %p
+        :markdown
+          This is really not an active project due to its tiny size. It is more like on-demand: when something useful is missing it will be added in some way. I do wish, though, that hosting the code on GitHub will promote forks and additions from anybody. Just fork it and improve, or write a ticket. 
     %footer
       :markdown
         Brought to you by [madr](https://github.com/madr). Contributors: [VoQn](https://github.com/VoQn).
